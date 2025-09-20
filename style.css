@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #ffdde1, #ee9ca7);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 105, 180, 0.8);
+    transform: rotate(-45deg);
+    animation: floatUp 5s linear infinite;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 105, 180, 0.8);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    z-index: 2;
+}
+
+.notebook {
+    width: 100vw;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 1.1;
+    position: relative;
+    perspective: 1200px;
+}
+
+.cover, .pages {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transform-origin: left;
+    transition: transform 0.8s ease-in-out, opacity 0.8s;
+}
+
+.cover {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0px;
+    text-align: center;
+}
+
+.pages {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    opacity: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+button{
+    margin-bottom: -10px;
+}
+.notebook.open .cover {
+    transform: rotateY(-120deg);
+}
+
+.notebook.open .pages {
+    opacity: 1;
+}
+
+.message {
+    font-size: 15px;
+    color: #ff0080;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.message2 {
+    padding: 10px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 29px;
+    color: #f00000;
+    text-align: center;
+}
+
+.signature {
+    font-size: 10px;
+    color: #555;
+    font-style: italic;
+    text-align: center;
+    margin: 10px;
+}
+
+.btn {
+    background: #ff4081;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #c2185b;
+    transform: scale(1.1);
+}
