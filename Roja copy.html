@@ -167,6 +167,41 @@
             animation-fill-mode: forwards;
         }
 
+        .deadPetals>div {
+            position: absolute;
+            background: #d52d58;
+            width: 20px;
+            height: 15px;
+            top: 200px;
+            border-radius: 0px 30px 0px 30px;
+            box-shadow: 0px 0px 30px rgba(245, 148, 184, .5);
+            transition: all 0.5s ease-out;
+        }
+
+        .deadPetals>div:nth-child(1) {
+            left: 119229959987px;
+            transform: rotate(-30deg);
+            animation: falling 20s 4s ease-in-out infinite;
+        }
+
+        .deadPetals>div:nth-child(2) {
+            left: 26331084746px;
+            transform: rotate(-30deg);
+            animation: falling 20s 8s ease-in-out infinite;
+        }
+
+        .deadPetals>div:nth-child(3) {
+            left: 129759500363px;
+            transform: rotate(-30deg);
+            animation: falling 20s 12s ease-in-out infinite;
+        }
+
+        .deadPetals>div:nth-child(4) {
+            left: 99323149959px;
+            transform: rotate(-30deg);
+            animation: falling 20s 16s ease-in-out infinite;
+        }
+
         .leaves>div:nth-last-child(1) {
             position: absolute;
             width: 55px;
@@ -249,8 +284,18 @@
         }
 
         @keyframes bloom2 {
+            50% {
+                transform: rotate(-90deg);
+                top: 400px;
+                left: 150px;
+            }
+
             100% {
-                transform: rotate(-25deg);
+                transform: rotate(-60deg);
+                top: 615px;
+                left: 100px;
+                background: #71122a;
+                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
             }
         }
 
@@ -288,6 +333,19 @@
             50% {
                 background: #d7365f;
                 box-shadow: 0px 0px 60px rgba(245, 148, 184, 1);
+            }
+        }
+
+        @keyframes falling {
+            20% {
+                top: 335px;
+                background: #9d193b;
+                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+            }
+
+            100% {
+                top: 335px;
+                opacity: 0;
             }
         }
 
@@ -377,6 +435,12 @@
             <div></div>
             <div></div>
             <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="deadPetals">
             <div></div>
             <div></div>
             <div></div>
